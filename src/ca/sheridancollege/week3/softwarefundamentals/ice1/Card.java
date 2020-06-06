@@ -18,8 +18,11 @@ public class Card {
 
    private String suit; //clubs, spades, diamonds, hearts
    private int value;//1-13
+   //public int rang;
+   //public int offset;
 
    public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
+   public final int Cards = 52;
     /**
      * @return the suit
      */
@@ -48,6 +51,16 @@ public class Card {
         this.value = value;
     }
    // insert two methods to generate random value and suit here
-   
+   public int getRandomValue(){
+    return (int)(Math.random() * (13 +1 ))+ 1;
     
+}
+   public int getRandomSuit(){
+    return (int)(Math.random() * (3 +1 ))+ 0;
+    
+}
+   @Override
+   public String toString(){
+       return "The card number is " + getValue() + " the suit is " + getSuit();
+   }
 }
